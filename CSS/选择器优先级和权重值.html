@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择器优先级和权重值</title>
+    
+    <style>
+        /* #h11{
+            color: brown;
+        } 
+        
+         .aa{
+            color: chartreuse;
+        } */
+        /* 内部样式 */
+        /* h1{
+            color: blue !important;
+        } */
+        /* #div1 h1{
+            color: darkgreen;
+        }
+        .div2 h1{
+            color: darkred;
+        }
+        #div2-2 h1{
+            color: darkviolet;
+        } */
+        h1#h11{
+            color: brown;
+        } 
+        div.aa{
+            background:blue;
+        }
+    </style>
+    <!-- 外部样式 -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    <!-- 内联样式-->
+    <!-- <h1 style="color: blue;"> this is a title</h1> -->
+    <h1 id="h11" class="aa">this is a title</h1>
+    <div id="h11" class="aa">aaaaa</div>
+    <div id="div1">
+        <div id="div2-2" class="div2">
+            <h1>this is a tileeee</h1>
+        </div>
+
+    </div>
+</body>
+</html>
