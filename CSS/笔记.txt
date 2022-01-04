@@ -133,3 +133,53 @@ meta :元数据
 
         <h1 id="h11" class="aa">this is a title</h1>
         <div id="h11" class="aa">aaaaa</div>
+
+
+查询手册：
+		caniuse.com
+		css.doyoe.com
+文本垂直居中：
+	单行文本居中：让 line-height=height
+
+并列元素外边距合并：以最大的外边距为准
+解决父子元素外边距合并问题:
+		#div1{
+            width: 200px;
+            height: 200px;
+            background-color: #ff0000;
+            /* border: 1px solid #000000; */
+            /* padding: 10px 20px 30px 40px;
+             */
+             /* padding-left: 20px; */
+             margin: 50px;
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background-color:blue;
+            margin-top: 80px;
+        }
+		<div id="div1">
+        <div id="div2"></div>
+    	</div>
+	修改：
+        #div1{
+            width: 200px;
+            height: 200px;
+            background-color: #ff0000;
+            border: 1px solid #000000;   第一种加个边框（不是很靠谱）
+			position: absolute;      第二种加定位（会释放自己占的位置，导致后面的元素向前 也不推荐）
+			overflow: hidden（溢出：隐藏）;     第三种（推荐这个，没有副作用）
+            /* padding: 10px 20px 30px 40px;
+             */
+             /* padding-left: 20px; */
+             margin: 50px;
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background-color:blue;
+            margin-top: 80px;
+        }
+
+body 会默认有八个像素的外边距
