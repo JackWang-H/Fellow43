@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //函数声明
+        // function test(name){    //形参
+        //     console.log('hello '+name);
+        // }
+        // test('daye');// 实参
+
+        // function add(a, b){
+        //     return a + b;
+        // }
+        // var c = add(3, 4);
+        // console.log(c);
+        //函数声明
+        // function test(){
+
+        // }
+        // test();
+
+        //函数表达式
+        //在js中函数是一个对象，所以函数可以作为一个值赋值给变量 
+        // var test = function(){
+        //     console.log('hhhhh');
+        // }
+        // test();
+        //函数式编程
+        // function test (a){
+        //     a();
+        // }
+        // test(function(){
+        //     console.log('hhhhhh');
+        // });
+        // function test (a){
+        //     a(function(){
+        //         console.log('hhhh');
+        //     });
+        // }
+        // test(function(b){
+        //     b();
+        // });
+
+        // function test2(a){
+        //     return function(b){
+        //         return a + b;
+        //     }
+        // }
+
+        // // var x = test2(3);
+        // // var y =x(4); 
+        // // console.log( y  );
+        // var x = test2(3)(4);
+        // console.log(x);
+        var fn1 = function(){
+            console.log('dddddd');
+        }
+        
+        function test2(a){
+            a();
+        }
+        test2(fn1);
+    </script>
+</body>
+</html>
