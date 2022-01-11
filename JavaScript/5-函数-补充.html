@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        数据类型：
+            1、基本数据类型：string、number、Boolean、undefined、null、symbol（es6）、bigint（草案，还没成标准）
+            2、引用类型：object
+     -->
+    <script>
+
+        // 函数声明
+        function fn1(){
+
+        }
+        fn1();// 此处fn1放在函数声明前调用也可以。是因为函数提升。
+
+        //函数表达式
+        //函数在js中就是一种值，一种数据类型,属于引用类型
+        var fn2 = function(){
+            console.log('hahaha......');
+        };
+        fn2();//此处只能先声明后调用，为什么不能函数提升是因为函数表达式就是一种赋值。这种在底层执行的就是下面fn3的原理
+        // console.log(typeof(fn2));
+        var fn3 = new Function("console.log('hehhehe......')");//底层原理，只要出现new就会开辟一个空间就会占用内存
+        
+        fn3();
+    </script>
+</body>
+</html>

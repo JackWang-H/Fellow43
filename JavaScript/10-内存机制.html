@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //所有的基本类型，变量都放在栈内存中，连续存储
+        //所有的引用类型，new出来的对象都放在堆内存中，散列存储
+        var a = 5;
+        var b = 'abc';
+        var c = true;
+        var o1 = {
+            name:'lisi',
+            age:23
+        };
+        var o2 = {
+            name:'lisi',
+            age:23
+        }
+
+        console.log(o1 == o2);//false
+
+        var o3 = o1;
+        console.log(o3 == o1);//true
+
+        o1.name = 'wangwu';
+        console.log(o3.name);//wangwu
+
+        //值传递和引用传递
+        //对于基本类型数据传递属于值传递
+        //对于引用类型数据传递输入引用传递，但是底层都是值传递
+        function test(x){
+            x.name = 'wangwu';
+            console.log(x.name);
+        }
+
+        test(o1);
+        console.log(o1.name);
+    </script>
+</body>
+</html>
