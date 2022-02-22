@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点我</button>
+    <h1 id="btn">这是一个h1</h1>
+
+    <ul id="ul1">
+        <li>item 1</li>
+        <li class="item">item 2</li>
+        <li class="item">item 3</li>
+    </ul>
+
+    <ul id="ul2">
+        <li class="item">item 4</li>
+        <li>item 5</li>
+    </ul>
+    <script>
+        //1.getElementById:通过元素id获取该元素对象
+        //注：这个方法的前面只能是document
+        // var btn = document.getElementById('btn');
+        // console.log(btn);
+
+        // var arr = [3,4,5];//这是真正的数组
+        // console.log(arr);
+
+        //2.getElementsByTagName：通过元素的名称获取元素
+        //注：这个方法的前面可以是其他的对象
+        // var aLi = document.getElementsByTagName('li');// aLi是一个伪数组
+        // console.log(aLi);
+        // for(var i = 0; i < aLi.length; i++){
+        //     console.log(aLi[i]);
+        // }
+
+        //现在只获取ul1中li怎么做？
+        //       1.先获取ul1对象  2.在获取li
+        // var oUl = document.getElementById('ul1');
+        // var aLi = oUl.getElementsByTagName('li');
+        // for(var i = 0; i < aLi.length; i++){
+        //     console.log(aLi[i]);
+        // }
+
+
+        //注：以上两个方法没有任何兼容性问题
+        //3.getElementsByClassName:通过元素的class获取元素
+        var oUl1 = document.getElementById('ul1');
+        // var aLi = oUl.getElementsByClassName('item');
+        // for(var i = 0; i < aLi.length; i++){
+        //     console.log(aLi[i]);
+        // }
+        //注：此方法在IE8以及之前的存在兼容性问题！！！！！
+        //解决方法：自己封装一个getElementsByClassName方法
+        /**
+         * 
+         * @param className 要查找的类的名称
+         * @param tagName 限定标签的名称
+         * @param context 限定搜索的范围
+         */
+        function getByClassName(className,tagName,context){
+            var elements = [];
+            context = context || document; //相当于if else判断
+            //先检测一下当前浏览器是否支持getElementsByClassName，如果支持直接调用，否者调用自己的自己的方法
+            if(document.getElementsByClassName){
+                elements = context.getElementsByClassName(className);
+            }else{
+                var aTag = context.getElementsByTagName(tagName);
+                for(var i = 0; i < aTag.length; i++){
+                    if(aTag.className == className){   //这里如果是一个多类呢？<li class="item aa">item 2</li>
+                        elements.push(aTag[i]);        //此处需要用正则表达式来处理
+                    }
+                }
+            }
+            return elements;
+        }
+
+        // var aLi = getByClassName('item','li',oUl1);
+        // for(var i = 0; i < aLi.length; i++){
+        //     aLi[i].style.background = 'red';
+        // }
+        
+
+        //4.querySelector
+        // var oBtn = document.querySelector('#btn');
+        // console.log(oBtn);
+
+        //5.querySelectorAll
+        var aLi = document.querySelectorAll('.item')
+        for(var i = 0; i < aLi.length; i++){
+            aLi[i].style.background = 'red';
+        }
+        
+    </script>
+</body>
+</html>
