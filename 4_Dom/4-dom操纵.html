@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1" aa="bb">添加</button>
+    <button id="btn2">移除</button>
+    <button id="btn3">替换</button>
+    <button id="btn4">克隆</button>
+
+    <ul id="ul1">
+        <li>11111111</li>
+    </ul>
+
+    <div>
+        <p>
+            <span></span>
+            <i>1234</i>
+        </p>
+    </div>
+    <script>
+        var oBtn1 = document.getElementById('btn1');
+        var oUl1 = document.getElementById('ul1');
+        var oBtn2 = document.getElementById('btn2');
+        var oBtn3 = document.getElementById('btn3');
+        var oBtn4 = document.getElementById('btn4');
+
+        //添加元素节点事件
+        oBtn1.onclick = function () {
+            //1.createElement:创建一个元素节点
+            var oLi = document.createElement('li');
+            oLi.innerHTML = 'appendChild';
+            //2.appendChild:添加一个元素节点
+            oUl1.appendChild(oLi);
+            console.log(oLi);
+        }
+
+        //移除元素节点事件
+        oBtn2.onclick = function () {
+            //3.removeChild：移除一个元素节点
+            oUl1.removeChild(oUl1.lastElementChild);
+        }
+
+        //替换元素节点事件
+        oBtn3.onclick = function () {
+            //4.替换一个元素节点
+            //4-1可以先创建一个节点去替换原来的节点！
+            // var oLi = document.createElement('li');
+            // oLi.innerHTML = 'replaceChild';
+            // oUl1.replaceChild(oLi,oUl1.firstElementChild);
+
+            //4-2 也可以创建一个文本节点去替换原来的文本节点
+            // var textNode = document.createTextNode('textNode');
+            // var oLi = oUl1.firstElementChild;
+            // oLi.replaceChild(textNode,oLi.firstChild);
+
+            //4-3 也可以直接修改文本内容
+            var oLi = oUl1.firstElementChild;
+            oLi.innerHTML = 'replaceChild';
+        }
+
+        //克隆节点
+        oBtn4.onclick = function () {
+            var oLi = oUl1.firstElementChild;
+            //克隆节点
+            var oLi1 = oLi.cloneNode(true);
+            oUl1.appendChild(oLi1);
+        }
+
+        //<button id="btn1" aa="bb">添加</button>
+        //id是dom属性，aa是自定义都没属性
+        //oBtn1.id：这种是调用是对象属性
+
+
+
+        console.log(oBtn1.id); //obtn1
+        oBtn1.id = 'hahhahahh';
+        console.log(oBtn1.id);//hahhahahh
+
+        //对象属性：不能再dom中看到
+        oBtn1.cc = 'dd';
+        console.log(oBtn1.cc);//dd
+        //自定义dom属性：不能通过对象属性的方式获取到
+        //dom属性可以
+        console.log(oBtn1.aa);//undefined
+
+        //通过js设置自定义dom属性
+        oBtn1.setAttribute('ee','ff');//<button id="hahhahahh" ee="ff">添加</button>
+        //通过getAttribute得到自定义dom属性
+        console.log(oBtn1.getAttribute('aa')); //bb
+
+    </script>
+</body>
+</html>

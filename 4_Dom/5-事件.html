@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件</title>
+</head>
+<body>
+    <!--
+        我们主要研究这三个名词
+        1、事件源：该事件是那个元素触发的
+        2、事件处理函数：如何处理这个事件的函数
+        3、事件对象：他是对象，在这个对象中，包含所有与该事件有关的信息
+
+    -->
+    <button id="btn1">点我</button>
+    <script>
+        var oBtn1 = document.getElementById('btn1');
+        //oBtn1事件源，function事件处理函数，e事件对象
+        oBtn1.onclick = function (e) {
+            console.log(99999);
+            console.log(e);
+        }
+
+        //绑定事件的方式：1、on+事件名   2、事件监听(用于多个事件同时发生)
+        //事件监听：addEventListener(事件名，处理函数，false 或true)
+        oBtn1.addEventListener('click',function (e) {
+            console.log(88888);
+            console.log(e);
+        },false)
+        oBtn1.addEventListener('click',fn,false)
+
+        //事件移除:方法就是共同调用处理函数变量
+        oBtn1.removeEventListener('click',fn,false);//如果这样做为什么会移除失败？原因是虽然上面add中与remove中函数形式是一样的，但是两个函数占的
+        //内存空间是不一样的，所以这两个函数不是同一个函数。
+        //解决方法如下：写成同一个函数
+        var fn = function (e) {
+            console.log(77777);
+            console.log(e);
+        };
+    </script>
+</body>
+</html>

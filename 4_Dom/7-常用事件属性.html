@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">12343445</div>
+    <a id="aa" href="http://www.baidu.com">百度</a>
+    <script>
+        var oDiv1 = document.getElementById('div1');
+        oDiv1.onclick = function (e) {
+            //1、clientX | clientY属性，获取鼠标点击位置（距离窗口）
+            console.log(e.clientX,e.clientY);
+            //2.显示事件源
+            console.log(e.target);
+        }
+        //3、keyCode 获取键盘码
+        document.onkeydown = function (e) {
+            console.log(e.keyCode);
+        }
+
+        //4.preventDefault 阻止默认行为 
+        var oA = document.getElementById('aa');
+        oA.onclick = function (e) {
+            e.preventDefault();
+        }
+    </script>
+</body>
+</html>

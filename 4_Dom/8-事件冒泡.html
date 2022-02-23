@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #a{
+            width: 300px;
+            height: 300px;
+            background: red;
+        }
+        #b{
+            width: 200px;
+            height: 200px;
+            background: green;
+        }
+        #c{
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="a">
+        a
+        <div id="b">
+            b
+            <div id="c">c</div>
+        </div>
+    </div>
+    <script>
+        var oA = document.getElementById('a');
+        var oB = document.getElementById('b');
+        var oC = document.getElementById('c');
+
+        //事件冒泡：事件从里往外触发  cba   false
+        // oA.addEventListener('click',function(){
+        //     console.log('a');
+        // },false);
+        // oB.addEventListener('click',function(){
+        //     console.log('b');
+        // },false);
+        // oC.addEventListener('click',function(){
+        //     console.log('c');
+        // },false);
+        //阻止事件冒泡   ：  e.stopPropagation()
+        oA.addEventListener('click',function(){
+            console.log('a');
+        },false);
+        oB.addEventListener('click',function(e){
+            console.log('b');
+            e.stopPropagation();
+        },false);
+        oC.addEventListener('click',function(e){
+            console.log('c');
+            e.stopPropagation();
+        },false);
+        //事件捕获：事件从外往里触发  abc    true
+        // oA.addEventListener('click',function(){
+        //     console.log('a');
+        // },true);
+        // oB.addEventListener('click',function(){
+        //     console.log('b');
+        // },true);
+        // oC.addEventListener('click',function(){
+        //     console.log('c');
+        // },true);
+    </script>
+</body>
+</html>

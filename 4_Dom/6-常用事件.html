@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oSex = document.getElementById('sex');
+            oSex.onchange = function () {
+                console.log(888);
+        }
+        }
+       
+    </script>
+</head>
+<body>
+    <p>
+        <input type="text" id="username" value="请输入名字">
+    </p>
+    <p>
+        <select name="" id="sex">
+            <option value="男">男</option>
+            <option value="女">女</option>
+        </select>
+    </p>
+
+    <p>
+        <input type="text" id="search" value="">
+    </p>
+
+    <button id="btn1">点我点我呀</button>
+    <div id="div1">
+        123
+    </div>
+
+    <form id="myform" action="http://www.baidu.com">
+        <p>
+            用户名：<input type="text">
+        </p>
+        <p>
+            密码 ：<input type="text">
+        </p>
+        <button type="submit">提交</button>
+    </form>
+
+
+    <script>
+        var oInput = document.getElementById('username');
+        //1.onfocus|onblur
+        oInput.onfocus = function () {
+            if (this.value == '请输入名字') {
+                this.value = '';
+            }
+        }
+        oInput.onblur = function () {
+            if (this.value == '') {
+                this.value = '请输入名字'
+            }
+        }
+        //2.onchange事件，选择结果改变后才反映，没有改变就不反映
+        var oSex = document.getElementById('sex');
+        oSex.onchange = function () {
+            console.log(888);
+        }
+        //3.keydown  |  keyup  键盘按下、抬起事件
+        var oSearch = document.getElementById('search');
+        // oSearch.onkeydown = function () {
+        //     console.log(oSearch.value);
+        // }
+        oSearch.onkeyup = function () {
+            console.log(oSearch.value);
+        }
+
+        //4.mouseover | mouseout 鼠标划入、划出事件
+        var oDiv1 = document.getElementById('div1');
+        // //鼠标划入
+        // oDiv1.onmouseover = function () {
+        //     console.log('我进去了！！');
+        // }
+        // //鼠标划出
+        // oDiv1.onmouseout = function () {
+        //     console.log('我出去了！！');
+        // }
+        // 5.鼠标移动 mousemove
+        // oDiv1.onmousemove = function () {
+        //     console.log('我在移动！！');
+        // }
+        
+       //click 与 mousedown 的区别：click 可以通过回车和空格点击，后者只能通过鼠标
+        var oBtn1 = document.getElementById('btn1');
+        oBtn1.onclick = function () {
+            console.log('我被点了！！');
+        }
+        //6.鼠标按下 mousedown | mouseup
+        //  oBtn1.onmousedown = function (){
+        //     console.log('我按下鼠标了！！');
+        // }
+
+        //7.submit 表单不会跳转
+        var oFrom = document.getElementById('myform');
+        oFrom.onsubmit = function () {
+            return false;
+        }
+        //8.onload 事件
+    </script>
+</body>
+</html>
