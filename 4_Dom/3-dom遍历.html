@@ -17,7 +17,7 @@
     <script>
         var oH1 = document.getElementById('h11');
         var oP2 = document.getElementById('p2');
-        //nextSibling  | nextElementSibling
+        //1:兄弟  nextSibling  | nextElementSibling
         // console.log(oH1.nextSibling);   //下一个兄弟，此方法不会忽略回车等文本
         // console.log(oH1.nextElementSibling);//IE8及以前都不支持,存在兼容性问题
 
@@ -33,7 +33,7 @@
         next(oH1).style.background = 'red';
         // next(oP2).style.background = 'red';
 
-        //firstChild   |  firstElementChild
+        //1. 孩子 firstChild   |  firstElementChild
         var oDiv1 = document.getElementById('div1');
         // console.log(oDiv1.firstChild);
         // console.log(oDiv1.firstElementChild);

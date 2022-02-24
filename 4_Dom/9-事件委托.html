@@ -28,7 +28,7 @@
             aLi[i].onclick = function () {
                 //aLi[i].innerHTML不好使，因为console.log实在for循环之后触发事件的时候才执行的，
                 //这时候循环已执行完,i=3(超出了数组长度)
-                console.log(this.innerHTML);//这个地方是不能用aLi[i]的，因为事件只有触发后才能执行
+                // console.log(this.innerHTML);//这个地方是不能用aLi[i]的，因为事件只有触发后才能执行
             }
         }
         var oBtn = document.getElementById('btn1');

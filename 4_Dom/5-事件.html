@@ -32,7 +32,8 @@
         oBtn1.addEventListener('click',fn,false)
 
         //事件移除:方法就是共同调用处理函数变量
-        oBtn1.removeEventListener('click',fn,false);//如果这样做为什么会移除失败？原因是虽然上面add中与remove中函数形式是一样的，但是两个函数占的
+        oBtn1.removeEventListener('click',fn,false);
+        //如果这样做为什么会移除失败？原因是虽然上面add中与remove中函数形式是一样的，但是两个函数占的
         //内存空间是不一样的，所以这两个函数不是同一个函数。
         //解决方法如下：写成同一个函数
         var fn = function (e) {
