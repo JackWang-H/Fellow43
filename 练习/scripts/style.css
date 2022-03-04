@@ -1,9 +1,22 @@
-h1{
+p i:first-child{
+    color: aqua;
+}
+
+p:first-child i{
+    color: blue;
+}
+
+p::before{
+    content: '我说：';
+    background: red;
+    font-weight: bold;
+}
+::selection {
     color: red;
-}
-p{
-    color: green;
-}
-li{
-    list-style-type: none;
-}
+    background: yellow;
+  }
+
+  p{
+      height: 50px;
+      background-color: rgba(0, 255,0, 0.1);
+  }

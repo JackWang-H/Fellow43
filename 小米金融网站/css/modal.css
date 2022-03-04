@@ -1,0 +1,59 @@
+/* 让一个元素充满整个屏幕 */
+.modal{
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    /* 使用opacity会导师子元素随父元素透明 */
+    /* opacity: 0.5; */
+}
+
+.modal-dialog{
+    width: 600px;
+    height: 400px;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /*下面的代码不够灵活，必须要知道高和宽*//*margin-left: -300px;
+    margin-top: -200px;
+    *//*一下这种是最灵活的,但存在兼容性Ie8前不好使*/transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+
+.modal-header{
+    /* height: 50px;
+     */
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    position: relative;
+}
+
+.modal-body{
+    padding: 10px;
+}
+
+.modal-footer{
+    width: 100%;
+    /* height: 50px; */
+    border-top: 1px solid #ccc;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.modal .close{
+    border: 0;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}

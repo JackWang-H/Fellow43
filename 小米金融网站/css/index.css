@@ -1,0 +1,125 @@
+
+
+/* banner 开始 */
+#banner{
+    height: 640px;
+    background: url(../images/banner.jpg) center;
+    /* 用来解决外边距合并问题 */
+    /* overflow: hidden; */
+    text-align: center;
+}
+
+#banner h2{
+    font-size: 54px;
+    color: white;
+    font-weight: 300;
+    padding-top: 193px;
+}
+
+#banner button{
+    background: #F93F2B;
+    color: #fff;
+    font-size: 24px;
+    width: 260px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border: none;
+    margin-top: 36px;
+}
+
+#banner button:hover,
+#banner button:active{
+    background: #ec3f2c;
+    cursor: pointer;
+}
+
+/* banner 结束 */
+
+/* main 开始 */
+
+main.wrapper{
+    height: 469px;
+    border: 1px solid #e6e6e6;
+    margin-top: -80px ;
+    background: #ffffff;
+}
+
+.info-item {
+    margin: 30px;
+    width: 360px;
+    float: left;
+    margin-right: 0;
+}
+
+.info-item a{
+    font-size: 16px;
+    color: #666;
+}
+
+.info-item .info-img{
+    width: 360px;
+    height: 180px;
+    background-image: url(../images/bg1.png);
+    background-size: cover;
+    overflow: hidden;
+}
+
+.info-item .info-img.img-blue{
+    /* width: 360px;
+    height: 180px;
+    background-image: url(./images/bg2.png);
+    background-size: cover;
+    overflow: hidden; */
+    background-image: url(../images/bg2.png);
+}
+
+.info-item .info-img p{
+    font-size: 33px;
+    color: #fff;
+    font-weight: 400;
+    margin-top: 44px;
+    margin-left: 30px;
+}
+
+.info-item ul{
+    margin: 20px 30px;
+    padding-bottom: 10px;
+}
+
+.info-item ul li{
+    height: 42px;
+    line-height: 42px;
+}
+
+.info-item .info-img p.desc{
+    margin-top: 16px;
+}
+
+.info-item span{
+    color: #ea5600
+}
+
+.info-item .info-img.img-blue+ul span{
+    color: #4481c8;
+}
+
+/* .info-item .span-blue span{
+    color: #4481c8;
+} */
+
+.info-more{
+    width: 300px;
+    height: 62px;
+    line-height: 62px;
+    color: #fd3911;
+    margin: 0 auto;
+    border-top: 1px solid #ececec;
+    text-align: center;
+}
+/* main 结束 */
+
