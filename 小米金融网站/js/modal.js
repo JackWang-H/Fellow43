@@ -25,13 +25,20 @@ var Modal = (function () {
 
 
     function Modal(options){
-        var oModal = document.getElementById(options.ele);
-        oModal.style.display = 'block'
+        var _this = this;
+        this.oModal = document.getElementById(options.ele);
+        this.oModal.onclick = function () {
+            _this.close();
+        };
+        this.oModal.style.display = 'block'
 
         // dom查找的方式
         // var modalDialog = oModal.getElementsByClassName('modal-dialog')[0];
         //dom遍历的方式
-        var modalDialog = util.first(oModal);
+        var modalDialog = util.first(this.oModal);
+        modalDialog.onclick = function (e) {
+            e.stopPropagation();
+        }
         //第一次优化：可以用三则表达式
         //但是当有很多参数时就会出现很多的三则表达式，就会有点麻烦
         //所以在考虑第二次优化
@@ -44,10 +51,23 @@ var Modal = (function () {
         modalDialog.style.height = settings.height+ 'px';
 
         // oModal.querySelector('.close');也可以用这个
-        var btnClose = oModal.getElementsByClassName('close')[0];
+        var btnClose = this.oModal.getElementsByClassName('close')[0];
         btnClose.onclick = function () {
-            oModal.style.display = 'none';
-        }
+            _this.close();
+        };
+
+        var btnCancel = this.oModal.getElementsByClassName('cancel')[0];
+        btnCancel.onclick = function () {
+            _this.close();
+        };
+
+        var btnOk = this.oModal.getElementsByClassName('ok')[0];
+        btnOk.onclick = function () {
+            settings.onOk();
+        };
     }
+    Modal.prototype.close = function () {
+        this.oModal.style.display = 'none';
+    };
     return Modal;
 })();

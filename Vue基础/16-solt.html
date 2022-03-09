@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    //用template来定义组件的结构,必须用div包裹着
+    <template id="tpl2">
+        <div>用template实现
+            <slot name="a1"></slot>
+            <h1>周六</h1>
+            <p>是个好天气</p>
+            <slot name="a2"></slot>
+
+        </div>
+    </template>
+
+    <div id="app">
+        <tpl1></tpl1>
+        <tpl2>
+            <a slot="a2" href="">tiaotiao1</a>
+            <a slot="a1" href="">tiaotiao2</a>
+        </tpl2>
+    </div>
+    
+    <script src="vue.js"></script>
+    <script>
+        //拼接字符串
+        //传统拼接方式
+        var str1 = '111111';
+        var str2 = 'good';
+        var str3 = '111111' +str2+ '1111111';
+        console.log(str3);
+        //模板拼接方式
+        var str4 = `111111${str2}111111`;
+        //也可用这种方式来定义组件的结构
+        var tpl = `<div>
+            <h1>周六
+                <p>是个好天气</p>
+            </h1>
+        </div>`;
+        console.log(str4);
+        var vm = new Vue({
+            el: '#app',
+            data : {
+
+            },
+            methods: {
+                
+            },
+            components: {
+                'tpl1': {
+                    template: tpl,//定义组件结构的方式
+                    props: []
+                },
+                //组件也有自己的数据和方法
+                'tpl2': {
+                    template: '#tpl2',//定义组件结构的方式
+                    props: [],
+                    data () {
+                        return {
+                            
+                        }
+                    },
+                    methods: {
+                        
+                    }
+                },
+            }
+        })
+    </script>
+</body>
+</html>

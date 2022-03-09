@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #f00;
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background: #0f0;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="div1" @click="fn1">
+            <!-- .stop阻止事件冒泡 -->
+            <div id="div2" @click.stop="fn2"></div>
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+                fn1(){
+                    console.log('div1');
+                },
+                fn2(){
+                    console.log('div2');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

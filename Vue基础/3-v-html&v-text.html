@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 三者区别
+        首先，v-html与前两者区别：v-html会插入一段HTML代码
+            当msg: '<a href=""> jjjjjjjjjjjj</a>'时，v-html会出现a标签链接，其余不会
+        其次，v-text与{{}}区别：
+            {{}}会有一个刷新的过程，但是很快，而v-text不会有
+        -->
+        <P>{{ msg }}</P>
+        <p v-text="msg"></p>
+        <p v-html="msg"></p>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                // msg: 'hello world!'
+                msg: '<a href=""> jjjjjjjjjjjj</a>'
+            }
+        });
+    </script>
+</body>
+</html>

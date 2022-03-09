@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-on:时间类型 = "事件处理函数" -->
+        <!-- 事件三要素：事件源、事件处理函数、事件对象 -->
+        <!-- 事件源：button，事件处理函数：add，事件对象：$event(必须这么写，王八的屁股->龟腚) -->
+        <!-- 第一种获取事件对象的方法： -->
+        <!-- <button v-on:click = "add('hahah',$event)">添加</button> -->
+        <!-- 第二种获取事件对象的方法： -->
+        <!-- v-on也可以用@来代替 -->
+        <button @click = "add('hahah')">添加</button>
+        <ul>
+            <li v-for="(item, index) in students">序号：{{index + 
+                1}} 姓名：{{item.name}} 年龄：{{item.age}}</li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                students: [
+                            {
+                                name: 'lisi',
+                                age: 13
+                            },
+                            {
+                                name: 'wangwu',
+                                age: 34
+                            },
+                            {
+                                name: 'zhangsan',
+                                age: 9000
+                            }
+                ]
+            },
+            methods: {
+                // 第一种获取事件对象的方法：
+                // add(str,e){
+                //     // this指的是实例化的vue对象（vm）
+                //     // console.log(this);
+                //     // console.log(this.students);
+                //     this.students.push({
+                //         name: 'wang',
+                //         age: 18
+                //     });
+                //     console.log(str,e);
+                // }
+                // 第二种获取事件对象的方法：直接event
+                add(str){
+                    // this指的是实例化的vue对象（vm）
+                    // console.log(this);
+                    // console.log(this.students);
+                    this.students.push({
+                        name: 'wang',
+                        age: 18
+                    });
+                    console.log(str);
+                    console.log(event);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

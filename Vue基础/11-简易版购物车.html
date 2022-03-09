@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #app{
+            width: 400px;
+            margin: 50px auto;
+        }
+
+        ul{
+            border-bottom: 1px solid #000;
+            list-style: none;
+            padding-top: 10px;
+        }
+
+        .list{
+            height: 40px;
+            line-height: 40px;
+            display: flex;
+            justify-content: space-between;
+            background: pink;
+            margin-bottom: 10px;
+            padding: 0 10px;
+        }
+        
+        .active{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>商品列表</h1>
+        <input type="text" v-model="aa">
+        <ul>
+            <!-- 面对多种类的时候用数组的方式 -->
+            <li :class="['list',item.isActive ? 'active' : '']" v-for="(item,index) in list" @click="change(item)">
+                <span> {{item.name}} </span>
+                <span> {{item.price}} </span>
+            </li>
+        </ul>
+        <!-- 普通属性 -->
+        <!-- <p>总价：{{total}}</p> -->
+
+        <!-- 方法调用 -->
+        <p>总价：{{ sum() }}</p>
+
+        <!-- 计算属性 -->
+        <p>总价：{{ total }}</p>
+
+        <!--
+             计算属性与方法调用的区别：
+             方法调用：每当触发重新渲染时（只要data中的数据改变），方法就会被调用；
+             计算属性：只在相关响应式依赖发生改变时它们才会重新求值；
+        -->
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                aa:'',
+                // total:0,
+                list: [
+                    {
+                        name: '衬衫',
+                        price: 99,
+                        isActive: false
+                    },
+                    {
+                        name: '电脑',
+                        price: 138000,
+                        isActive: false
+                    },
+                    {
+                        name: '裙子',
+                        price: 888,
+                        isActive: false
+                    },
+                    {
+                        name: '裤子',
+                        price: 10000,
+                        isActive: false
+                    },
+                ]
+
+            },
+            computed: {
+                total(){
+                    let count = 0;
+                    this.list.forEach((obj, index) => {
+                        if (obj.isActive) {
+                            count += obj.price;
+                        }
+                    });
+                    console.log(999);
+                    return count;
+                }
+            },
+            methods: {
+                change(obj){
+                    obj.isActive = !obj.isActive;
+                    this.sum();
+                },
+                sum () {
+                    let count = 0;
+                    this.list.forEach((obj, index) => {
+                        if (obj.isActive) {
+                            count += obj.price;
+                        }
+                    });
+                    console.log(666);
+                    return count;
+                    // this.total = count;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
