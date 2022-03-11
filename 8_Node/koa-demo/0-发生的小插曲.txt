@@ -1,0 +1,2 @@
+如果此文件刚开始没有.JSON文件，就直接用npm install koa，他会默认找上级的.JSON文件然后在安装koa
+所以，应该先 npm init -y，在 npm install koa
