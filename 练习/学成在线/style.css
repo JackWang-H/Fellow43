@@ -319,12 +319,30 @@ a {
 }
 
 .box-bd ul li {
+    position: relative;
     float: left;
     margin-right: 15px;
     margin-bottom: 15px;
     width: 228px;
     height: 270px;
     background-color: pink;
+}
+
+.box-bd ul li .hot {
+    position: absolute;
+    top: 4px;
+    right: -4px;
+    width: 40px;
+    height: 20px;
+}
+
+
+.box-bd ul li .new {
+    position: absolute;
+    top: 4px;
+    right: -4px;
+    width: 40px;
+    height: 20px;
 }
 
 .box-bd ul li img {
