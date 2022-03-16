@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .b1 {
+            width: 0;
+            height: 0;
+            border-top: 10px solid red;
+            border-right: 10px solid blue;
+            border-bottom: 10px solid green;
+            border-left: 10px solid black;
+        }
+
+        .b2 {
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-top-color: pink;
+        }
+
+        .jd {
+            position: relative;
+            width: 120px;
+            height: 250px;
+            background-color: brown;
+        }
+
+        .jd span {
+            position: absolute;
+            right: 15px;
+            top: -20px;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            font-size: 0;
+            border: 10px solid transparent;
+            border-bottom-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="b1"></div>
+    <div class="b2"></div>
+    <div class="jd">
+        <span></span>
+    </div>
+</body>
+
+</html>

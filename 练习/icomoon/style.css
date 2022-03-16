@@ -1,0 +1,158 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?4z5l39');
+  src:  url('fonts/icomoon.eot?4z5l39#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?4z5l39') format('truetype'),
+    url('fonts/icomoon.woff?4z5l39') format('woff'),
+    url('fonts/icomoon.svg?4z5l39#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-1password:before {
+  content: "\e900";
+  color: #0094f5;
+}
+.icon-500px:before {
+  content: "\e901";
+  color: #0099e5;
+}
+.icon-angular:before {
+  content: "\e902";
+  color: #dd0031;
+}
+.icon-apacheopenoffice:before {
+  content: "\e903";
+  color: #0e85cd;
+}
+.icon-apacherocketmq:before {
+  content: "\e904";
+  color: #d77310;
+}
+.icon-apachespark:before {
+  content: "\e905";
+  color: #e25a1c;
+}
+.icon-apple:before {
+  content: "\e906";
+  color: #999;
+}
+.icon-applemusic:before {
+  content: "\e907";
+}
+.icon-applepay:before {
+  content: "\e908";
+}
+.icon-artstation:before {
+  content: "\e909";
+  color: #13aff0;
+}
+.icon-arxiv:before {
+  content: "\e90a";
+  color: #b31b1b;
+}
+.icon-asciidoctor:before {
+  content: "\e90b";
+  color: #e40046;
+}
+.icon-baidu:before {
+  content: "\e90c";
+  color: #2319dc;
+}
+.icon-behance:before {
+  content: "\e90d";
+  color: #1769ff;
+}
+.icon-bigcartel:before {
+  content: "\e90e";
+}
+.icon-bitbucket:before {
+  content: "\e90f";
+  color: #0052cc;
+}
+.icon-bitcoin:before {
+  content: "\e910";
+  color: #f7931a;
+}
+.icon-bootstrap:before {
+  content: "\e911";
+  color: #563d7c;
+}
+.icon-box:before {
+  content: "\e912";
+  color: #0061d5;
+}
+.icon-codeigniter:before {
+  content: "\e913";
+  color: #ee4623;
+}
+.icon-conda-forge:before {
+  content: "\e914";
+}
+.icon-adobeillustrator:before {
+  content: "\e916";
+  color: #ff7c00;
+}
+.icon-alliedmodders:before {
+  content: "\e917";
+  color: #1578d3;
+}
+.icon-amazon:before {
+  content: "\e918";
+  color: #f90;
+}
+.icon-beatsbydre:before {
+  content: "\e919";
+  color: #e01f3d;
+}
+.icon-behance1:before {
+  content: "\e915";
+  color: #1769ff;
+}
+.icon-clockify:before {
+  content: "\e91a";
+  color: #03a9f4;
+}
+.icon-clojure:before {
+  content: "\e91b";
+  color: #5881d8;
+}
+.icon-cloudbees:before {
+  content: "\e91c";
+  color: #1997b5;
+}
+.icon-cloudflare:before {
+  content: "\e91d";
+  color: #f38020;
+}
+.icon-codepen:before {
+  content: "\e91e";
+}
+.icon-coderwall:before {
+  content: "\e91f";
+  color: #3e8dcc;
+}
+.icon-codewars:before {
+  content: "\e920";
+  color: #ad2c27;
+}
+.icon-coveralls:before {
+  content: "\e921";
+  color: #3f5767;
+}
