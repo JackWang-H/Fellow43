@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 回调地域
+        // $.get('./data/a.json', function (res1) {
+        //     $.get('./data/b.json', function (res2) {
+        //         console.log(res2);
+        //         $.get('./data/c.json', function (res3) {
+        //             console.log(res3);
+        //         })
+        //     })
+        // })
+
+        // promise：用同步的形式处理异步的问题
+        // let p1 = new Promise(function (resolve, reject) {
+        //     setTimeout(() => {
+        //         // resolve('success'); //请求成功
+        //         reject('fail'); //请求失败
+        //     }, 1000);
+        // }).then((res) => {   //请求成功进入then
+        //     console.log(res);
+        // }).catch((err) => {  //请求失败进入catch
+        //     console.log(err);
+        // });
+
+        function getData(url) {
+            return new Promise((resolve, reject) => {
+                $.get(url, function (data) {
+                    if (url == './data/b.json') {
+                        reject('失败');
+                    }
+                    resolve(data)
+                })
+            })
+        }
+
+        getData('./data/a.json').then(res => {
+            console.log(res);
+            return getData('./data/b.json');
+        }).then(res => {
+            console.log(res);
+            return getData('./data/c.json')
+        }).then(res => {
+            console.log(res);
+        }).catch(err => console.log(err));
+
+        let p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('p1');
+                resolve();
+            }, 1000);
+        })
+        let p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('p2');
+                resolve();
+            }, 500);
+        })
+        let p3 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('p3');
+                resolve();
+            }, 2000);
+        })
+
+        // Promise.all([p1, p2, p3]).then(() => {
+        //     console.log('都 ok');
+        // })
+        Promise.race([p1, p2, p3]).then(() => {
+            console.log('ok 了');
+        })
+
+
+    </script>
+</body>
+
+</html>

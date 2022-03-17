@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        // 1、创建数组的方式
+        let arr1 = [1, 2, 3];
+        let arr2 = new Array(5); //传一个参数，当做数组的长度。多个当做数组的元素
+        console.log(arr2);
+
+        // 3、将一组值转换为数组
+        console.log(Array.of(2, 4, 6));
+        console.log(Array.of(2)); //不管传几个参数都是作为元素
+
+        // 2、类数组  =》 数组
+        let aLi = document.getElementsByTagName('li');
+        console.log(aLi);
+        console.log(Array.from(aLi));
+        console.log([...aLi]);//扩展运算符
+        // 这是.json文件格式
+        let j1 = {
+            "0": 1,
+            "1": 2,
+            "2": 3,
+            length: 3
+        }
+        console.log(Array.from(j1));
+
+        console.log([0, 1, 2, 3, 4, 5].copyWithin(1, 3, 5)); //[0,3,4,3,4,5]
+        // 4、数组的遍历
+
+        // for ...of
+        let list = [1, 2, 3, 4, 5];
+        for (let p of list) {
+            console.log(p);
+        }
+        // values()
+        for (let value of list.values()) {
+            console.log(value);
+        }
+        // keys() 这是索引
+        for (let key of list.keys()) {
+            console.log(key);
+        }
+        // entries()
+
+        // foreach 只是循环数组，不会改变原数组
+        list.forEach(function (value, index, arr) {
+            value += 1;
+        })
+        console.log(list); //这里不会改变
+        let list1 = [{
+            name: 'lisi',
+            age: 11
+        }, {
+            name: 'wangwu',
+            age: 22
+        }, {
+            name: 'lineng',
+            age: 1331
+        },]
+
+        list1.forEach(function (value, index, arr) {
+            value.age += 1;
+        })
+        console.log(list1);
+
+        // map  有返回值 ，这里返回的是满足条件的值（age） 和未满足条件的undefined的数组
+        let arr10 = list1.map((value, index, arr) => {
+            if (value.age > 22) {
+                return value.age
+            }
+        });
+        console.log(arr10);
+
+        // filter 这里返回的是满足条件的数组元素
+        let arr11 = list1.filter((value, index, arr) => {
+            return value.age > 22
+        });
+        console.log(arr11);
+
+    </script>
+</body>
+
+</html>
