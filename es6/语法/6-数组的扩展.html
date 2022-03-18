@@ -55,6 +55,9 @@
             console.log(key);
         }
         // entries()
+        for (let [index, value] of list.entries()) {
+            console.log(index, value);
+        }
 
         // foreach 只是循环数组，不会改变原数组
         list.forEach(function (value, index, arr) {
