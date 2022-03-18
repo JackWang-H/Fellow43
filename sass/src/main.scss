@@ -1,0 +1,17 @@
+/*
+1.变量的定义
+2.嵌套
+    1.选择器的嵌套
+    2.属性的嵌套
+3.特殊变量
+4.混合宏
+*/
+$color: #cdddee; //变量 用$符号
+$student: ".student-list li"; //3.特殊变量
+
+// 混合宏,将大多数一样的属性写在一起
+@mixin box($b, $w, $h) {
+  background-color: $b;
+  width: $w;
+  height: $h;
+}

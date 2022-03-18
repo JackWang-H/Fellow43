@@ -1,0 +1,35 @@
+@import "./main.scss";
+#container {
+  background: $color;
+  width: 200px;
+  height: 200px;
+  //   选择器是可以嵌套的
+  .box1 {
+    width: 100px;
+    height: 100px;
+    a {
+      color: red;
+      //&符号是对外面元素的引用
+      &:hover {
+        color: green;
+      }
+    }
+    &-item {
+      list-style: none;
+    }
+
+    // 属性也可以嵌套
+    margin: {
+      top: 10px;
+      bottom: 10px;
+    }
+
+    #{$student} {
+      border: 1px solid black;
+    }
+  }
+  .box2 {
+    @include box(orange, 400px, 500px);
+  }
+}
+// 将 sass文件 转换成 css文件： sass src/index.scss:dist/index.css

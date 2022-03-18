@@ -1,0 +1,2 @@
+1.将 sass文件 转换成 css文件： sass src/index.scss:dist/index.css
+2.跟踪文件：sass src:dtst -w
